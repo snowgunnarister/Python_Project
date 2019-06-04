@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Rating a comment on Social</title>
+</head>
+<body>
+      <br>
+      <h2> <p align="center">Rating a comment on Social</p> </h2>
+      
+        <div class="container mt-5">
+                <div class="form-group">
+                  <select id="product-select" class="form-control custom-select">
+                      <option value="0" disabled selected>Select Social</option>
+                      <option value="top5">Top 5</option>
+                      <option value="top10">Top 10</option>
+                    </select>
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>Comment</th>
+                      <th>Username</th>
+                      <th>Rating</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="twitt twitt1">
+                        <td>1</td>
+                      <td>Twitter : Good Holiday</td>
+                      <td>Username</td>
+                      <td>
+                        <div class="stars-outer">
+                          <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                      </td>
+                    </tr>
+                    <tr class="twitt twitt2">
+                        <td>2</td>
+                      <td>Twitter : Long Live the King</td>
+                      <td>Username</td>
+                      <td>
+                        <div class="stars-outer">
+                          <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                      </td>
+                    </tr>
+                    <tr class="twitt twitt3">
+                        <td>3</td>
+                      <td>Twitter : Liverpool Champ</td>
+                      <td>Username</td>
+                      <td>
+                        <div class="stars-outer">
+                          <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                      </td>
+                    </tr>
+                    <tr class="twitt twitt4">
+                        <td>4</td>
+                      <td>Twitter : Fish Stop</td>
+                      <td>Username</td>
+                      <td>
+                        <div class="stars-outer">
+                          <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                      </td>
+                    </tr>
+                    <tr class="twitt twitt5">
+                        <td>5</td>
+                      <td>Twitter : เลือกตั้งใหม่หรือไม่</td>
+                      <td>Username</td>
+                      <td>
+                        <div class="stars-outer">
+                          <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                      </td>
+                    </tr>
+                    <tr class="faceb faceb1">
+                        <td>1</td>
+                            <td>Facebook : Phikachu Return!</td>
+                            <td>Username</td>
+                            <td>
+                              <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                              </div>
+                              <span class="number-rating"></span>
+                            </td>
+                          </tr>
+                          <tr class="faceb faceb2">
+                              <td>2</td>
+                            <td>Facebook : Sonic model in Live Action</td>
+                            <td>Username</td>
+                            <td>
+                              <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                              </div>
+                              <span class="number-rating"></span>
+                            </td>
+                          </tr>
+                          <tr class="faceb faceb3">
+                              <td>3</td>
+                            <td>Facebook : Thor ถังเบียร์</td>
+                            <td>Username</td>
+                            <td>
+                              <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                              </div>
+                              <span class="number-rating"></span>
+                            </td>
+                          </tr>
+                          <tr class="faceb faceb4">
+                              <td>4</td>
+                            <td>Facebook : รักคุณ 3000</td>
+                            <td>Username</td>
+                            <td>
+                              <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                              </div>
+                              <span class="number-rating"></span>
+                            </td>
+                          </tr>
+                          <tr class="faceb faceb5">
+                              <td>5</td>
+                            <td>Facebook : test</td>
+							              <td>Username</td>
+                            <td>
+                              <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                              </div>
+                              <span class="number-rating"></span>
+                            </td>
+                          </tr>
+                  </tbody>
+
+                </table>
+              </div>
+              
+              <script>
+                  int commentchoose = [];
+              </script>
+
+              <script>
+                  // Initial Ratings
+                    const ratings = {
+                    twitt1: 4.7,
+                    twitt2: 3.4,
+                    twitt3: 2.3,
+                    twitt4: 3.6,
+                    twitt5: 4.1,
+
+                    faceb1: 3.7,
+                    faceb2: 4.4,
+                    faceb3: 1.3,
+                    faceb4: 4.6,
+                    faceb5: 2.1
+                    }
+
+                    // Total Stars
+                    const starsTotal = 5;
+
+                    // Run getRatings when DOM loads
+                    document.addEventListener('DOMContentLoaded', getRatings);
+
+                    // Form Elements
+                    const productSelect = document.getElementById('product-select');
+                    const ratingControl = document.getElementById('rating-control');
+
+                    // Init product
+                    let product;
+
+                    // Product select change
+                    productSelect.addEventListener('change', (e) => {
+                    product = e.target.value;
+                    // Enable rating control
+                    ratingControl.disabled = false;
+                    ratingControl.value = ratings[product];
+                    });
+
+                    // Rating control change
+                    ratingControl.addEventListener('blur', (e) => {
+                    const rating = e.target.value;
+
+                    // Make sure 5 or under
+                    if (rating > 5) {
+                        alert('Please rate 1 - 5');
+                        return;
+                    }
+
+                    // Change rating
+                    ratings[product] = rating;
+
+                    getRatings();
+                    });
+
+                    // Get ratings
+                    function getRatings() {
+                    for (let rating in ratings) {
+                        // Get percentage
+                        const starPercentage = (ratings[rating] / starsTotal) * 100;
+
+                        // Round to nearest 10
+                        const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
+                        // Set width of stars-inner to percentage
+                        document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+
+                        // Add number rating
+                        document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+                    }
+                    }
+              </script>
+              <style>
+                    .stars-outer {
+                    position: relative;
+                    display: inline-block;
+                    }
+
+                    .stars-inner {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    width: 0;
+                    }
+
+                    .stars-outer::before {
+                    content: "\f005 \f005 \f005 \f005 \f005";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: #ccc;
+                    }
+
+                    .stars-inner::before {
+                    content: "\f005 \f005 \f005 \f005 \f005";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: #f8ce0b;
+                    }
+
+              </style>
+
+</body>
+
+
+</html>
